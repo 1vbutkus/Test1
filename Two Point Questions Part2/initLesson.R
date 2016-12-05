@@ -3,7 +3,7 @@ assign("mpg.midsize", cars[cars$type=="midsize","mpgCity"], envir=globalenv())
 
 # Path to installed lesson
 .lessonpath <- file.path(path.package("swirl"), "Courses", 
-                         "Test1", "Two Point Questions")
+                         "Test1", "Two Point Questions Part2")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "flag.data.txt")
 # Load dataset
