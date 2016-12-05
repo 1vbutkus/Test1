@@ -1,0 +1,52 @@
+- Class: meta
+  Course: Test
+  Lesson: Three Point Questions
+  Author: Vygantas Butkus
+  Type: Standard
+  Organization: Vilnius University
+  Version: 0.1.1
+
+- Class: text
+  Output: Each question in this part of the test is worth 3 points. Total sum of points for this part is 18. Good luck!  
+  
+- Class: cmd_question
+  Output: Use a function to get the class of each column of the flags dataset and store the result in cls_vect. (This function starts with the letter 's')
+  CorrectAnswer: cls_vect <- sapply(flags, class)
+  AnswerTests: omnitest(correctExpr='cls_vect <- sapply(flags, class)')
+  
+- Class: mult_question
+  Output: Which one of the following expressions evaluates to FALSE?
+  CorrectAnswer: "FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5"
+  AnswerChoices: "FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5; FALSE || TRUE && 6 != 4 || 9 > 4; !(8 > 4) ||  5 == 5.0 && 7.8 >= 7.79; 6 >= -9 && !(6 > 7) && !(!TRUE)"
+  AnswerTests: omnitest(correctVal='FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5')
+
+- Class: cmd_question
+  Output: Now, look at the documentation for the matrix function and see if you can figure out how to create a matrix containing the same numbers (1-20) and dimensions (4 rows, 5 columns) by calling the matrix() function. Store the result in a variable called my_matrix2.
+  CorrectAnswer: my_matrix2 <- matrix(1:20, nrow=4, ncol=5)
+  AnswerTests: calculates_same_value('matrix(1:20, nrow=4, ncol=5)'); expr_creates_var('my_matrix2')
+
+- Class: cmd_question
+  Output: A binomial random variable represents the number of 'successes' (heads) in a given number of independent 'trials' (coin flips). Therefore, we can generate a single random variable that represents the number of heads in 100 flips of our unfair coin using rbinom(1, size = 100, prob = 0.7). Note that you only specify the probability of 'success' (heads) and NOT the probability of 'failure' (tails). Try it now.
+  CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
+  AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
+  
+- Class: mult_question
+  Output: The sum of two fair dices roll are calculated. Which of the following expressions represents the probability of rolling a number greater than 10?
+  AnswerChoices: (2+1)/36; (1+1)/36; (3+1)/36; (3+1-1)/36
+  CorrectAnswer: (2+1)/36
+  AnswerTests: omnitest(correctVal='(2+1)/36')
+
+- Class: mult_question
+  Output: For instance, suppose we have a coin which may or may not be fair. Let x=0 represent a 'heads' outcome and x=1 represent a 'tails' outcome of a coin toss. If p is the probability of 'heads' which of the following represents the PMF of the coin toss?  The variable x is either 0 (heads) or 1 (tails).
+  AnswerChoices: (p^x)*(1-p)^(1-x); (p^(1-x))*(1-p)^x
+  CorrectAnswer: (p^(1-x))*(1-p)^x
+  AnswerTests: omnitest(correctVal='(p^(1-x))*(1-p)^x')
+
+- Class: text
+  Output: Congratulations on finishing this part of the test! 
+  
+- Class: mult_question
+  Output: Would you like to submit the log of this lesson to Google Forms so that your instructor may evaluate your progress?
+  AnswerChoices: Yes
+  CorrectAnswer: NULL
+  AnswerTests: submition()

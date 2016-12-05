@@ -1,0 +1,138 @@
+- Class: meta
+  Course: Test
+  Lesson: One Point Questions
+  Author: Vygantas Butkus
+  Type: Standard
+  Organization: Vilnius University
+  Version: 0.1.1
+
+- Class: text
+  Output: Each question in this part of the test is worth 1 point. Total sum of points for this part is 20. Good luck!  
+  
+- Class: mult_question
+  Output: Let's quickly test your understanding of the term REPRESENTATIVE. If you were interested in studying the health of men living in the US, ages 18-25, which sample would be more representative of the target population - a sample of 50 men who live in a nearby retirement home, or a sample of 50 men who are students at a local university?
+  AnswerChoices: Men living at the retirement home; College students
+  CorrectAnswer: College students
+  AnswerTests: omnitest(correctVal='College students')
+
+- Class: mult_question
+  Output: Which of the following terms are of most importance when describing the central tendency of a data set?
+  AnswerChoices: median, mode, range; statistics, population, mode; population, sample, representative; mode, median, mean
+  CorrectAnswer: mode, median, mean
+  AnswerTests: omnitest(correctVal='mode, median, mean')
+  
+- Class: mult_question
+  Output: 'Three important measures of variability are which of the following:' 
+  AnswerChoices: mean, median, range; spread, mean, central tendency; variance, dispersion, spread; range, variance, standard deviation
+  CorrectAnswer: range, variance, standard deviation
+  AnswerTests: omnitest(correctVal = 'range, variance, standard deviation')
+  
+- Class: figure
+  Output: This is a box plot for the prices of cars.
+  Figure: mod1_boxplot.R
+  FigureType: new
+
+- Class: mult_question
+  Output: Is the variability of prices of cars of type 'large' higher or lower than that of cars of type 'small'?
+  AnswerChoices: higher; lower; the same
+  CorrectAnswer: higher
+  AnswerTests: omnitest(correctVal = 'higher')
+
+- Class: cmd_question
+  Output: Assign the result of 5 + 7 to a new variable called x.
+  CorrectAnswer: x <- 5 + 7
+  AnswerTests: any_of_exprs('x <- 5 + 7', 'x <- 7 + 5')
+  
+- Class: cmd_question
+  Output: Store the result of x - 3 in a new variable called y.
+  CorrectAnswer: y <- x - 3
+  AnswerTests: omnitest(correctExpr='y <- x - 3')
+
+- Class: cmd_question
+  Output: See if 6 is equal to 7.
+  CorrectAnswer: 6 == 7
+  AnswerTests: any_of_exprs('6 == 7', '7 == 6')
+  
+- Class: mult_question
+  Output: Which of the following evaluates to FALSE?
+  CorrectAnswer: 9 >= 10
+  AnswerChoices: 9 >= 10; 7 == 7; 6 < 8; 0 > -36 
+  AnswerTests: omnitest(correctVal='9 >= 10')
+
+- Class: cmd_question
+  Output: Let's create a vector containing the numbers 1 through 20 using the `:` operator. Store the result in a variable called my_vector.
+  CorrectAnswer: my_vector <- 1:20
+  AnswerTests: omnitest(correctExpr='my_vector <- 1:20')
+
+- Class: mult_question
+  Output: Recall that the expression y > 0 will give us a vector of logical values the same length as y, with TRUEs corresponding to values of y that are greater than zero and FALSEs corresponding to values of y that are less than or equal to zero. What do you think y[y > 0] will give you?
+  AnswerChoices: A vector of all the positive elements of y; A vector of all the negative elements of y; A vector of all NAs; A vector of length 0; A vector of TRUEs and FALSEs
+  CorrectAnswer: A vector of all the positive elements of y
+  AnswerTests: omnitest(correctVal="A vector of all the positive elements of y")
+  
+- Class: mult_question
+  Output: (TRUE == TRUE) | (TRUE == FALSE)
+  CorrectAnswer: 'TRUE'
+  AnswerChoices: TRUE; FALSE
+  AnswerTests: omnitest(correctVal='TRUE')
+  
+- Class: cmd_question
+  Output: 'Create a character vector that contains the following words: "My", "name", "is". Store the vector in a variable called my_char.'
+  CorrectAnswer: my_char <- c("My", "name", "is")
+  AnswerTests: omnitest(correctExpr='my_char <- c("My", "name", "is")')
+  
+- Class: mult_question
+  Output: The sample variance estimates what?
+  AnswerChoices: population variance; sample mean; sample standard deviation; population
+  CorrectAnswer: population variance
+  AnswerTests: omnitest(correctVal='population variance')
+  
+- Class: mult_question
+  Output: True or False - The sample variance gets more concentrated around the population variance with larger sample sizes
+  AnswerChoices: True; False
+  CorrectAnswer: True
+  AnswerTests: omnitest(correctVal='True')
+
+- Class: mult_question
+  Output: For instance, if you were rolling a single, fair die once, how many outcomes are possible?
+  AnswerChoices: 6; 1; 4; Too many
+  CorrectAnswer: 6
+  AnswerTests: omnitest(correctVal='6')
+
+- Class: mult_question  
+  Output: Which of the following would NOT be a source of bad data? 
+  AnswerChoices: Small sample size; Selection bias; A randomly selected sample of population; A poorly designed study 
+  CorrectAnswer: A randomly selected sample of population
+  AnswerTests: omnitest(correctVal='A randomly selected sample of population')
+  
+- Class: mult_question
+  Output: Which of the following is NOT an example of statistical inference in action?
+  AnswerChoices: Estimating the proportion of people who will vote for a candidate; Testing the effectiveness of a medical treatment; Determining a causative mechanism underlying a disease; Counting sheep
+  CorrectAnswer: Counting sheep
+  AnswerTests: omnitest(correctVal='Counting sheep')
+  
+- Class: mult_question
+  Output: A population mean is a center of mass of what?
+  AnswerChoices: a family; a distribution; a population; a sample 
+  CorrectAnswer: a population
+  AnswerTests: omnitest(correctVal='a population')
+  
+- Class: mult_question
+  Output: Suppose the person who gave you the dice rolled it behind your back and told you the roll was odd. Now what is the probability that the roll was a 3?
+  AnswerChoices: 1/6; 1/2; 1/3; 1/4; 1 
+  CorrectAnswer: 1/3
+  AnswerTests: omnitest(correctVal='1/3')
+  
+- Class: cmd_question
+  Output: Access the 'mpgCity' variable from the 'cars' dataset using the 'dataset$variable' notation.
+  CorrectAnswer: cars$mpgCity
+  AnswerTests: omnitest(correctExpr='cars$mpgCity')
+
+- Class: text
+  Output: Congratulations on finishing this part of the test!   
+  
+- Class: mult_question
+  Output: Would you like to submit the log of this lesson to Google Forms so that your instructor may evaluate your progress?
+  AnswerChoices: Yes
+  CorrectAnswer: NULL
+  AnswerTests: submition()
