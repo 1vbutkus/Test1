@@ -15,3 +15,11 @@ To start you should run:
 library("swirl")
 install_course_github("1vbutkus", "Test1")
 ```
+
+
+Bug fix:
+```{r}
+path <- file.path(path.package("swirl"), "Courses", "Test1")
+unlink(path, recursive = TRUE, force = TRUE)
+install_course_github("1vbutkus", "Test1")
+```
